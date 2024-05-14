@@ -5,25 +5,22 @@
 
 ONE | Fase 3 - Especialización Back-End G6 - Alura - Oracle Next Education. Curso Java: persistencia de datos y consultas con Spring Data JPA
 
+## Desafio curso Alura persistiendo datos artistas canciones - Screensound:
 
+Implementar una aplicación para almacenar datos de nuestros artistas y canciones preferidas en una base de datos relacional, pudiendo buscar información por artistas y consultar datos sobre los mismos a través de integración con la API de ChatGPT.
 
-## Desafio Screensound:
+Necesitarás una clase Artista, con los datos para representar el mismo;
+También será necesario una clase específica para representar las canciones;
+Para el artista, puedes practicar la implementación de un enum, para definir el tipo de artista, por ejemplo: solista, dúo o banda;
+Recuerda crear el proyecto a través del sitio [Spring Initializr](https://start.spring.io/), donde ya es posible añadir las dependencias de Spring Data JPA y PostgreSQL;
+Crea una clase principal con el menú, con las opciones deseadas, como: registrar artista, registrar canción, buscar canciones por artistas, etc;
+Recuerda extender CommandLineRunner en la clase de Spring, sobrescribiendo el método run para llamar al menú creado.
 
-- Registrar datos de cantantes
-- Registrar datos de canciones
-- Buscar canciones por cantantes
-- Y como adicional si lo deseas puedes integrar con ChatGPT y obtener información sobre un cantante de elección de nuestro usuario.
+## Objetivos del proyecto
 
-Crear nuestra base de datos PostgreSQL
+- El objetivo del proyecto es practicar la modelización de clases y relaciones utilizando Spring Data JPA;
+- Es importante describir e implementar correctamente la relación entre Artista y Canción, dado que un artista puede estar asociado a más de una canción;
+- Una canción solo debe ser guardada en la base de datos si el Artista ha sido previamente registrado;
+- Practicaremos consultas derivadas y JPQL para verificar si el artista ya está registrado y buscar canciones por un determinado artista;
+- Realizaremos la integración con la API de ChatGPT para buscar información sobre un determinado artista.
 
-En nuestro archivo pom.xml, adicionar las dependencias necesarias para que nuestra aplicación funcione correctamente.
-
-Conectar nuestra aplicación a la base de datos configurando nuestro archivo application.properties.
-
-Modelar y mapear las entidades que serán representadas como tablas en nuestra base de datos (cantantes y canciones por ejemplo) En este punto tu puedes escoger cuáles datos mapear en tu aplicación pues no estamos trabajando consumiendo ninguna API así que tendrás que llenar los datos manualmente.
-
-Establecer la relación entre tablas: recuerda que debes mapear muy bien la relación que existe entre las tablas de tu aplicación, volviendo a nuestro ejemplo de música podemos pensar que (1) un artista puede tener (n) varias canciones así que no te olvides de adicionar las anotaciones correspondientes en cada una de las clases e de relacionar correctamente la llave extranjera para cada uno de los registros, una vez hecho esto estarás listo para guardar satisfactoriamente las informaciones en la base de datos.
-
-Ahora es momento de realizar algunas búsquedas, puedes optar por utilizar el tipo de consulta que desees, sea usando Derived Querys, Native Querys o JPQL.
-
-Y como extra opcional puedes intentar realizar una integración con la API de ChatGPT para buscar información sobre un asunto determinado, en caso de nuestro ejemplo informaciones sobre un cantante :D
